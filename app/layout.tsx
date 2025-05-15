@@ -17,7 +17,7 @@ const amiri = Amiri({
   variable: "--font-amiri",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "نصائح جدتي | تراث وحكمة الجدات العربية",
   description:
     "اكتشفي كنز نصائح جدتي: وصفات شعبية، علاجات منزلية، طبخ تراثي، حرف يدوية، ورعاية أطفال بأسلوب الجدات العربية من مصر والخليج وبلاد الشام.",
@@ -41,16 +41,21 @@ export const metadata: Metadata = {
     "تطريز يدوي",
     "أعشاب طبية",
     "ضيافة عربية",
+    "نصائح جدتي",
+    "نصايح جدتي",
+    "جدتي",
+    "نصيحة جدتي",
   ],
+  metadataBase: new URL("https://nasaehgedety.vercel.app/"),
   openGraph: {
     title: "نصائح جدتي | تراث وحكمة الجدات العربية",
     description:
       "استمتعي بوصفات تراثية، نصائح منزلية، وحرف يدوية من الجدات العربية. اكتشفي الحلول التقليدية للطبخ، الصحة، والعناية بالمنزل!",
-    url: "https://www.nasaehgedety.vercel.app",
+    url: "https://nasaehgedety.vercel.app/",
     type: "website",
     images: [
       {
-        url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGsMB4uMi607u7mnFc92ZnA7SZJQQHel6SXgGiEIvmGWGmUFIt7hS-TGxcxM44ewKtHGrLPNB5tih4ypANGh_qJnpho7-mdZDD1Cwakbi33uFK32QOeGyaRnlEPCENap0sFK-mVEtH3_SHXQuYYuoa-7R-tQvxJ01TmmtlvfLTGr8DEfQu8JADVL37yOc/s320/Logo.jpg",
+        url: "/images/Logo.jpg", 
         width: 1200,
         height: 630,
         alt: "نصائح جدتي - تراث عربي تقليدي",
@@ -59,15 +64,20 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html suppressHydrationWarning={true} lang="ar" dir="rtl">
+      <head>
+        <Script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></Script>
+        <Script src="https://files.bpcontent.cloud/2025/05/14/17/20250514172648-XWMOF8BC.js"></Script>
+      </head>
       <body
-        className={`${cairo.variable} ${amiri.variable} font-cairo bg-beige-100`}
+    suppressHydrationWarning={true}    className={`${cairo.variable} ${amiri.variable} font-cairo bg-beige-100`}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <div className="flex flex-col min-h-screen">
@@ -77,7 +87,6 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        
         {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4125738794087531"
